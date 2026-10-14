@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Gallery | VC Custom Homes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D8263D;--red-d:#B01B30;--red-t:#F25368;--bg:#2A2C30;--card:#34373C;--line:#45484E;--text:#F3F3F4;--mute:#AAADB3;
+--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:400 1rem/1.6 var(--sans);color:var(--text);background-color:#222427;-webkit-font-smoothing:antialiased;animation:pg .8s ease}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red-t);outline-offset:3px}
+.wrap{width:min(1160px,92%);margin:auto}
+h1,h2{line-height:1.05;letter-spacing:-.035em;font-weight:800}
+h2{font-size:clamp(2rem,4.5vw,3rem)}
+header{position:sticky;top:0;z-index:20;background:rgba(42,44,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.03em;text-decoration:none;font-size:1.15rem}
+nav{display:flex;align-items:center;gap:1.8rem}
+nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--mute)}
+nav a:hover,nav a.on{color:var(--text)}
+nav .pill{background:var(--red);color:#fff;padding:.5rem 1rem;border-radius:99px;font-weight:600}
+nav .pill:hover{background:var(--red-d);color:#fff}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:99px;font-weight:600;text-decoration:none;background:var(--red);color:#fff;margin-right:.5rem;border:0;font:600 1rem var(--sans);cursor:pointer}
+.btn:hover{background:var(--red-d)}
+.btn.alt{background:transparent;color:var(--text);border:1.5px solid var(--mute)}
+.btn.alt:hover{background:var(--text);color:var(--bg)}
+@keyframes pg{from{opacity:0}}
+@keyframes hd{from{transform:translateY(-100%)}}
+header{animation:hd .8s cubic-bezier(.2,.7,.2,1)}
+.btn,nav a,.tabs button{transition:background .3s,color .3s,transform .3s,box-shadow .3s,border-color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(216,38,61,.35)}
+.btn.alt:hover{box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.btn:active{transform:none}
+nav a:not(.pill){position:relative}
+nav a:not(.pill)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--red-t);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+nav a:not(.pill):hover::after,nav a.on::after{transform:scaleX(1)}
+.logo{transition:opacity .3s}.logo:hover{opacity:.75}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+html,body{height:100%}
+body{display:flex;flex-direction:column;overflow:hidden}
+.tools{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;padding:.9rem 0}
+.tabs{display:flex;gap:.4rem;flex-wrap:wrap}
+.tabs button{font:600 .85rem var(--sans);padding:.45rem .95rem;border:0;background:var(--card);color:var(--mute);border-radius:99px;cursor:pointer}
+.tabs button:hover{color:var(--text)}
+.tabs button[aria-pressed=true]{background:var(--text);color:var(--bg)}
+.count{color:var(--mute);font-size:.9rem}
+.stage{flex:1;min-height:0;position:relative;display:flex;align-items:center;justify-content:center;padding:0 clamp(.5rem,4vw,4.5rem)}
+.stage img{max-width:100%;max-height:100%;object-fit:contain;border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.45);opacity:0;transform:translateX(var(--dx,0px)) scale(.985);transition:opacity .55s ease,transform .7s cubic-bezier(.2,.7,.2,1)}
+.stage img.ready{opacity:1;transform:none}
+.stage .msg{display:none;color:var(--mute)}
+.arrow{position:absolute;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;border:0;background:rgba(20,21,23,.7);color:#fff;font-size:1.6rem;line-height:1;cursor:pointer;display:grid;place-items:center}
+.arrow{transition:background .3s,transform .3s}
+.arrow:hover{background:var(--red);transform:translateY(-50%) scale(1.1)}
+.arrow.p{left:clamp(.3rem,1.5vw,1.2rem)}.arrow.n{right:clamp(.3rem,1.5vw,1.2rem)}
+.cap{text-align:center;padding:.8rem 1rem .5rem;font-size:.95rem}
+.cap span{color:var(--mute);margin-left:.6rem}
+.cap.swap{animation:up .6s cubic-bezier(.2,.7,.2,1)}
+@keyframes up{from{opacity:0;transform:translateY(10px)}}
+.tools,.thumbs{animation:pg 1s ease .2s backwards}
+.thumbs{display:flex;gap:8px;overflow-x:auto;padding:.5rem 4% 1rem;scroll-snap-type:x proximity}
+.thumbs button{flex:0 0 auto;width:96px;height:68px;padding:0;border:2px solid transparent;border-radius:8px;overflow:hidden;background:var(--card);cursor:pointer;opacity:.6;scroll-snap-align:center}
+.thumbs button{transition:opacity .3s,transform .3s,border-color .3s}
+.thumbs button:hover{opacity:1;transform:translateY(-3px)}
+.thumbs button[aria-current=true]{border-color:var(--red-t);opacity:1}
+.thumbs img{width:100%;height:100%;object-fit:cover}
+@media(max-width:700px){.arrow{width:40px;height:40px}.thumbs button{width:76px;height:54px}}
+
+.burger{display:none;font:600 .9rem var(--sans);color:var(--text);background:transparent;border:1px solid var(--line);border-radius:99px;padding:.45rem 1rem;cursor:pointer}
+@media(max-width:860px){
+ .burger{display:block}
+ .bar{position:relative}
+ nav{position:absolute;top:64px;left:-4%;right:-4%;flex-direction:column;align-items:stretch;gap:0;background:rgba(28,29,32,.98);padding:.4rem 6% 1.2rem;border-bottom:1px solid var(--line);display:none}
+ nav.open{display:flex}
+ nav a{padding:.85rem 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
+ nav a::after{display:none}
+ nav .pill{margin-top:1rem;text-align:center;border-bottom:0;padding:.8rem 1rem}
+}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;transform:translateZ(0);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(1100px 650px at 88% -8%,rgba(216,38,61,.11),transparent 62%),radial-gradient(900px 600px at -8% 45%,rgba(255,255,255,.035),transparent 60%),linear-gradient(180deg,#27292C,#1D1E21)}
+@media(max-width:800px){
+ body::before{background-image:linear-gradient(180deg,#27292C,#1D1E21)}
+ .card,.vcard,.tcard,.rcard,.fcard{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(22,23,26,.92)}
+ header.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(28,29,32,.97)}
+ .hero-img,.hero-copy,.band-in,.strip img{will-change:auto}
+}
+</style>
+</head>
+<body>
+<header><div class="wrap bar">
+ <a class="logo" href="index.html">VC Custom Homes</a>
+ <nav id="nav" aria-label="Main">
+  <a class="on" href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a href="reviews.html">Reviews</a>
+  <a href="warranty.html">Warranty</a>
+  <a class="pill" href="index.html#contact">Contact</a>
+ </nav>
+ <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+
+<div class="wrap tools">
+ <div class="tabs" role="group" aria-label="Filter photos">
+  <button data-f="all" aria-pressed="true">All</button>
+  <button data-f="Exterior" aria-pressed="false">Exterior</button>
+  <button data-f="Interior" aria-pressed="false">Interior</button>
+  <button data-f="Garage" aria-pressed="false">Garages</button>
+ </div>
+ <span class="count" id="count"></span>
+</div>
+
+<div class="stage" id="stage">
+ <button class="arrow p" aria-label="Previous photo">&#8249;</button>
+ <img id="big" alt="" referrerpolicy="no-referrer">
+ <span class="msg" id="msg">This photo could not be loaded.</span>
+ <button class="arrow n" aria-label="Next photo">&#8250;</button>
+</div>
+<div class="cap" id="cap"></div>
+<div class="thumbs" id="thumbs" aria-label="All photos"></div>
+
+<script>
+const H="https://white-hare-927448.hostingersite.com/wp-content/uploads/",S="https://vccustomhomes.com/wp-content/uploads/",V="https://vccustomhomes.com/wp-content/uploads/2025/05/";
+const P=[
+["Exterior",H+"2025/04/Front-16-edited-1.png","Front exterior"],
+["Exterior",H+"2025/04/Front-11-1-scaled.jpg","Front exterior"],
+["Exterior",H+"2025/04/Back-1-scaled.jpg","Two-story home with back patio, green lawn, and pool"],
+["Exterior",H+"2025/06/Front-15-1-scaled.jpg","Modern one-story home with two-car garage"],
+["Exterior",H+"2025/04/Front-1-scaled.png","Front exterior"],
+["Exterior",H+"2025/10/IMG_0987-scaled.webp","Exterior view"],
+["Exterior",H+"2025/04/Back-8.jpg","Rear exterior"],
+["Exterior",H+"2025/04/Back-10-scaled.jpg","Rear exterior"],
+["Exterior",H+"2025/04/Front-10-scaled.jpg","Front exterior"],
+["Interior",H+"2025/04/Kitchen-2.jpg","Kitchen"],
+["Interior",H+"2025/04/Dining-3-scaled.jpg","Dining area"],
+["Interior",H+"2025/10/IMG_1001-scaled.webp","Living room with hardwood floors, crown molding, and recessed lighting"],
+["Interior",H+"2025/04/Living-2.jpg","Living room"],
+["Interior",H+"2025/04/Bath-7-scaled.jpg","Bathroom"],
+["Interior",H+"2025/04/Bath-9.jpg","Bathroom"],
+["Interior",H+"2025/04/Bath-6-scaled.jpg","Bathroom"],
+["Interior",H+"2025/10/IMG_1051-scaled.webp","Walk-in shower with marble-pattern tile and hexagon tile floor"],
+["Interior",H+"2025/10/IMG_1009-scaled.webp","Walk-in closet with built-in shelving and a central island"],
+["Interior",H+"2025/10/Photo-Sep-12-2025-2-56-32-PM-scaled.webp","Vanity area leading into a walk-in closet"],
+["Interior",H+"2025/10/IMG_0985-scaled.webp","Interior view"],
+["Interior",H+"2025/10/IMG_0969.webp","Interior view"],
+["Interior",H+"2025/04/Screenshot-2025-04-09-at-11.23.03%20AM.png","Interior view"],
+["Garage",H+"2025/10/IMG_1038-scaled.webp","Garage with polished epoxy floor and pendant lights"],
+["Garage",H+"2025/04/Garage-View--scaled.jpg","Garage view"],
+["Garage",V+"2-Car-Detached-edit-819x1024.webp","Two-car detached garage"],
+["Garage",V+"garage-2-scaled-edit2-1024x1024.webp","Garage"],
+["Garage",V+"Attached-Carport-edit-819x1024.webp","Attached carport"],
+["More",H+"2025/06/Screenshot-2025-06-03-at-2.50.50%20PM.png","Project photo"],
+["More",H+"2025/05/480682724_2708833209314004_174790457973228719_n.jpg","Project photo"],
+["More",H+"2025/06/480334376_2708833199314005_975883298237976439_n.jpg","Project photo"],
+["More",H+"2025/06/480496076_2708833205980671_9111260585323513373_n.jpg","Project photo"],
+["More",H+"2025/06/IMG_7583.jpeg","Project photo"],
+["More",H+"2025/06/480651453_2708833449313980_6028984618107570106_n.jpg","Project photo"],
+["More",H+"2025/06/480322703_2708833139314011_2112742171123839103_n.jpg","Project photo"],
+["More",H+"2025/06/IMG_7589.jpeg","Project photo"],
+["More",H+"2025/06/Untitled.jpg","Project photo"],
+["More",H+"2025/06/481083095_2708833219314003_5133902645316478913_n.jpg","Project photo"],
+["Exterior",H+"2025/05/480708700_1041112788036344_6357652938482707117_n.webp","Farmhouse-style spec homes at Palmetto Farms in Pelzer, SC"],
+["Exterior",H+"2025/04/Back-4-scaled.jpg","Rear exterior"],
+["Interior",H+"2025/05/Bedroom.webp","Bedroom"],
+["Interior",H+"2025/05/Foyer-3.webp","Foyer"],
+["Interior",H+"2025/04/Kitchen-6.jpg","Kitchen"],
+["More",H+"2025/05/480931647_2710548092475849_456698904544605111_n-copy.webp","Palmetto Farms photo"],
+["More",H+"2025/05/Screenshot-2025-04-28-at-3.50.32%20PM.webp","Palmetto Farms photo"],
+["More",H+"2025/05/480884945_2708833482647310_1241567134408522106_n-copy.webp","Palmetto Farms photo"],
+["More",H+"2025/05/481213530_1041112621369694_4257027919794597141_n.webp","Palmetto Farms photo"],
+["More",H+"2025/06/481074380_2708833182647340_2483424166467856808_n.jpeg","Project photo"],
+["More",H+"2025/06/481124817_1041112454703044_8789393752182382703_n.jpg","Project photo"],
+["More",H+"2025/06/481154228_1041112498036373_6820156139683199134_n.jpg","Project photo"],
+["More",H+"2025/06/481166447_1041112501369706_5781858888863087003_n.jpeg","Project photo"],
+["More",H+"2025/06/482003848_1041112428036380_3435230024463752864_n.jpg","Project photo"],
+["More",H+"2025/06/481275783_1041112371369719_6584393209316818331_n.jpg","Project photo"]
+];
+function cands(u){
+  const out=[u];
+  if(u.startsWith(H)){const r=u.slice(H.length);out.push(H+r.replace(/\.(jpe?g|png)$/i,'.webp'),S+r,S+r.replace(/\.(jpe?g|png)$/i,'.webp'))}
+  return out;
+}
+function tryNext(img,fail){
+  const list=JSON.parse(img.dataset.c),n=+img.dataset.n+1;
+  if(n<list.length){img.dataset.n=n;img.src=list[n]}else fail(img)
+}
+function tag(p,alt){return `referrerpolicy="no-referrer" data-n="0" data-c='${JSON.stringify(cands(p[1]))}' src="${p[1]}" alt="${alt}"`}
+
+const big=document.getElementById('big'),msg=document.getElementById('msg'),cap=document.getElementById('cap'),thumbs=document.getElementById('thumbs'),count=document.getElementById('count');
+let cur=P,idx=0;
+big.addEventListener('error',()=>tryNext(big,()=>{big.style.display='none';msg.style.display='block'}));
+big.addEventListener('load',()=>{big.style.display='block';msg.style.display='none';requestAnimationFrame(()=>requestAnimationFrame(()=>big.classList.add('ready')))});
+function show(i,dir=0){
+  idx=(i+cur.length)%cur.length;
+  const p=cur[idx];
+  big.classList.remove('ready');big.style.setProperty('--dx',(dir*50)+'px');
+  big.dataset.n=0;big.dataset.c=JSON.stringify(cands(p[1]));big.src=p[1];big.alt=p[2];
+  cap.innerHTML=p[2]+'<span>'+(idx+1)+' / '+cur.length+'</span>';cap.classList.remove('swap');void cap.offsetWidth;cap.classList.add('swap');
+  thumbs.querySelectorAll('button').forEach((b,j)=>{
+    b.setAttribute('aria-current',j===idx);
+    if(j===idx)b.scrollIntoView({block:'nearest',inline:'center',behavior:'smooth'});
+  });
+  const nx=cur[(idx+1)%cur.length];new Image().src=nx[1];
+}
+function build(f){
+  cur=P.filter(p=>f==='all'||p[0]===f);
+  thumbs.innerHTML=cur.map((p,i)=>`<button data-i="${i}" aria-label="Show photo ${i+1}: ${p[2]}"><img ${tag(p,'')} loading="lazy"></button>`).join('');
+  thumbs.querySelectorAll('img').forEach(im=>im.addEventListener('error',()=>tryNext(im,x=>x.closest('button').style.display='none')));
+  count.textContent=cur.length+' photos';
+  show(0);
+}
+document.querySelectorAll('.tabs button').forEach(b=>b.onclick=()=>{
+  document.querySelectorAll('.tabs button').forEach(x=>x.setAttribute('aria-pressed',x===b));
+  build(b.dataset.f);
+});
+thumbs.onclick=e=>{const b=e.target.closest('button');if(b)show(+b.dataset.i,Math.sign(+b.dataset.i-idx))};
+document.querySelector('.arrow.p').onclick=()=>show(idx-1,-1);
+document.querySelector('.arrow.n').onclick=()=>show(idx+1,1);
+document.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(idx-1,-1);if(e.key==='ArrowRight')show(idx+1,1)});
+let sx=null;const st=document.getElementById('stage');
+st.addEventListener('touchstart',e=>{sx=e.touches[0].clientX},{passive:true});
+st.addEventListener('touchend',e=>{if(sx===null)return;const d=e.changedTouches[0].clientX-sx;if(Math.abs(d)>50)show(idx+(d<0?1:-1),d<0?1:-1);sx=null});
+build('all');
+const bg=document.querySelector('.burger'),nv=document.getElementById('nav');
+bg.addEventListener('click',()=>{const o=nv.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+nv.addEventListener('click',e=>{if(e.target.tagName==='A'){nv.classList.remove('open');bg.setAttribute('aria-expanded','false')}});
+</script>
+</body>
+</html>

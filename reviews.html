@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script>document.documentElement.classList.add('js')</script>
+<title>Reviews | VC Custom Homes</title>
+<meta name="description" content="Read real reviews from happy homeowners who trusted VC Custom Homes for quality craftsmanship and personalized service in Upstate SC.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--red:#D8263D;--red-d:#B01B30;--red-t:#F25368;--bg:#2A2C30;--card:#34373C;--line:#45484E;--text:#F3F3F4;--mute:#AAADB3;
+--sans:'Inter',system-ui,-apple-system,'Segoe UI',sans-serif}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+body{font:400 1rem/1.6 var(--sans);color:var(--text);background-color:#222427;-webkit-font-smoothing:antialiased;animation:pg .8s ease}
+img{display:block;max-width:100%}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--red-t);outline-offset:3px}
+.wrap{width:min(1160px,92%);margin:auto}
+h1,h2{line-height:1.05;letter-spacing:-.035em;font-weight:800}
+h2{font-size:clamp(2rem,4.5vw,3rem)}
+header{position:sticky;top:0;z-index:20;background:rgba(42,44,48,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar{display:flex;align-items:center;justify-content:space-between;height:64px}
+.logo{font-weight:800;letter-spacing:-.03em;text-decoration:none;font-size:1.15rem}
+nav{display:flex;align-items:center;gap:1.8rem}
+nav a{text-decoration:none;font-size:.92rem;font-weight:500;color:var(--mute)}
+nav a:hover,nav a.on{color:var(--text)}
+nav .pill{background:var(--red);color:#fff;padding:.5rem 1rem;border-radius:99px;font-weight:600}
+nav .pill:hover{background:var(--red-d);color:#fff}
+.btn{display:inline-block;padding:.85rem 1.5rem;border-radius:99px;font-weight:600;text-decoration:none;background:var(--red);color:#fff;margin-right:.5rem;border:0;font:600 1rem var(--sans);cursor:pointer}
+.btn:hover{background:var(--red-d)}
+.btn.alt{background:transparent;color:var(--text);border:1.5px solid var(--mute)}
+.btn.alt:hover{background:var(--text);color:var(--bg)}
+@keyframes pg{from{opacity:0}}
+@keyframes hd{from{transform:translateY(-100%)}}
+header{animation:hd .8s cubic-bezier(.2,.7,.2,1)}
+.btn,nav a,.tabs button{transition:background .3s,color .3s,transform .3s,box-shadow .3s,border-color .3s}
+.btn:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(216,38,61,.35)}
+.btn.alt:hover{box-shadow:0 10px 24px rgba(0,0,0,.4)}
+.btn:active{transform:none}
+nav a:not(.pill){position:relative}
+nav a:not(.pill)::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:var(--red-t);transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.2,.7,.2,1)}
+nav a:not(.pill):hover::after,nav a.on::after{transform:scaleX(1)}
+.logo{transition:opacity .3s}.logo:hover{opacity:.75}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}}
+
+section{padding:clamp(3.5rem,8vw,6rem) 0}
+.js .rv{opacity:0;transform:translateY(28px);transition:opacity .9s cubic-bezier(.2,.7,.2,1),transform .9s cubic-bezier(.2,.7,.2,1),background .3s,color .3s,box-shadow .3s;transition-delay:var(--d,0s)}
+.js .rv.in{opacity:1;transform:none}
+.card{background:rgba(18,19,21,.62);backdrop-filter:blur(8px)}
+.cols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem)}
+.cols p{color:var(--mute);font-size:1.08rem;max-width:52ch}
+.cols p+p{margin-top:1rem}
+.info{display:grid;gap:1.3rem;align-content:start}
+.info dt{font-size:.82rem;color:var(--mute);text-transform:uppercase;letter-spacing:.08em}
+.info dd{font-size:1.15rem;font-weight:500}
+.info a{text-decoration:none}.info a:hover{color:var(--red-t)}
+footer{border-top:1px solid var(--line);padding:1.6rem 0;font-size:.85rem;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;flex-wrap:wrap;gap:.8rem}
+footer a{text-decoration:none}footer a:hover{color:var(--text)}
+.prog{position:fixed;top:0;left:0;right:0;height:3px;background:var(--red);transform:scaleX(0);transform-origin:left;z-index:60}
+header.scrolled{background:rgba(30,31,34,.82);border-bottom-color:var(--line);backdrop-filter:blur(12px)}.ph{padding:clamp(3rem,8vw,6.5rem) 0 clamp(1.5rem,4vw,3rem)}
+.eyebrow{display:block;color:var(--red-t);font-weight:700;font-size:.85rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:1rem}
+.ph h1{font-size:clamp(3rem,9vw,7rem);letter-spacing:-.045em;max-width:12ch}
+.ph p{margin-top:1.5rem;font-size:clamp(1.1rem,2vw,1.35rem);color:#D6D8DB;max-width:52ch}
+.ph p em{color:var(--text);font-style:italic}
+.strip{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px;padding-bottom:clamp(3rem,7vw,5rem)}
+.strip figure{border-radius:16px;overflow:hidden;aspect-ratio:4/5;background:var(--card)}
+.strip img{width:100%;height:114%;object-fit:cover;will-change:transform}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:clamp(2rem,6vw,5rem);align-items:start}
+.split p{color:var(--mute);font-size:1.1rem;max-width:54ch;margin-bottom:1.6rem}
+section.s{padding:clamp(3.5rem,8vw,6rem) 0}
+.vals{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:2.5rem}
+.vcard,.tcard{background:rgba(18,19,21,.62);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.vcard{padding:clamp(1.5rem,3vw,2.4rem)}
+.vcard:hover,.tcard:hover{transform:translateY(-5px);border-color:var(--red)}
+.vcard i{display:grid;place-items:center;width:44px;height:44px;border-radius:50%;background:var(--red);color:#fff;font:700 .9rem var(--sans);font-style:normal;margin-bottom:1.2rem}
+.vcard h3{font-size:1.4rem;letter-spacing:-.02em;margin-bottom:.6rem}
+.vcard p{color:var(--mute)}
+.team{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:2.5rem}
+.tcard{padding:1.6rem;display:flex;align-items:center;gap:1.1rem}
+.av{position:relative;overflow:hidden;flex:0 0 auto;width:78px;height:78px;border-radius:50%;display:grid;place-items:center;background:linear-gradient(135deg,var(--red),#7d1120);font-weight:700;letter-spacing:.02em;font-size:1.1rem}
+.av img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.tcard b{display:block;font-size:1.1rem;letter-spacing:-.01em}
+.tcard span{color:var(--mute);font-size:.92rem}
+.cta p{color:var(--mute);font-size:1.1rem;max-width:56ch;margin:1.2rem 0 2rem}
+.cta p em{color:var(--text)}
+.soc{display:flex;gap:1.2rem;flex-wrap:wrap}
+@media(max-width:800px){
+ .strip,.split,.vals,.team,.cols{grid-template-columns:1fr}
+ .strip figure{aspect-ratio:4/3}
+}
+
+.rgrid{columns:2 340px;column-gap:14px}
+.rcard{break-inside:avoid;margin-bottom:14px;background:rgba(18,19,21,.62);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:clamp(1.4rem,3vw,2rem);transition:transform .4s cubic-bezier(.2,.7,.2,1),border-color .4s}
+.rcard:hover{transform:translateY(-4px);border-color:var(--red)}
+.rcard .q{display:block;font:800 4rem/0.6 var(--sans);color:var(--red-t);margin-bottom:.6rem;height:1.6rem}
+.rcard p{color:#D6D8DB;font-size:1.05rem}
+.rcard footer{all:unset;display:flex;flex-wrap:wrap;align-items:baseline;gap:.4rem 1rem;margin-top:1.2rem;padding-top:1rem;border-top:1px solid var(--line)}
+.rcard footer b{font-size:1rem}
+.rcard footer span{color:var(--mute);font-size:.88rem;flex:1}
+.rcard footer a{color:var(--red-t);font-size:.9rem;font-weight:600;text-decoration:none}
+.rcard footer a:hover{text-decoration:underline}
+.cta p{color:var(--mute);font-size:1.1rem;max-width:56ch;margin:1.2rem 0 2rem}
+
+.burger{display:none;font:600 .9rem var(--sans);color:var(--text);background:transparent;border:1px solid var(--line);border-radius:99px;padding:.45rem 1rem;cursor:pointer}
+@media(max-width:860px){
+ .burger{display:block}
+ .bar{position:relative}
+ nav{position:absolute;top:64px;left:-4%;right:-4%;flex-direction:column;align-items:stretch;gap:0;background:rgba(28,29,32,.98);padding:.4rem 6% 1.2rem;border-bottom:1px solid var(--line);display:none}
+ nav.open{display:flex}
+ nav a{padding:.85rem 0;font-size:1.05rem;border-bottom:1px solid var(--line)}
+ nav a::after{display:none}
+ nav .pill{margin-top:1rem;text-align:center;border-bottom:0;padding:.8rem 1rem}
+}
+
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;transform:translateZ(0);background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.8' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 1 0 0 0 0 1 0 0 0 0 1 0 0 0 .045 0'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>"),radial-gradient(1100px 650px at 88% -8%,rgba(216,38,61,.11),transparent 62%),radial-gradient(900px 600px at -8% 45%,rgba(255,255,255,.035),transparent 60%),linear-gradient(180deg,#27292C,#1D1E21)}
+@media(max-width:800px){
+ body::before{background-image:linear-gradient(180deg,#27292C,#1D1E21)}
+ .card,.vcard,.tcard,.rcard,.fcard{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(22,23,26,.92)}
+ header.scrolled{backdrop-filter:none;-webkit-backdrop-filter:none;background:rgba(28,29,32,.97)}
+ .hero-img,.hero-copy,.band-in,.strip img{will-change:auto}
+}
+</style>
+</head>
+<body>
+<div class="prog"></div>
+<header class="scrolled"><div class="wrap bar">
+ <a class="logo" href="index.html">VC Custom Homes</a>
+ <nav id="nav" aria-label="Main">
+  <a href="gallery.html">Gallery</a>
+  <a href="about.html">About</a>
+  <a class="on" href="reviews.html">Reviews</a>
+  <a href="warranty.html">Warranty</a>
+  <a class="pill" href="#contact">Contact</a>
+ </nav>
+ <button class="burger" aria-expanded="false" aria-controls="nav">Menu</button>
+</div></header>
+<main>
+<section class="ph"><div class="wrap">
+ <span class="eyebrow">Reviews</span>
+ <h1>Kind words from homeowners.</h1>
+ <p>At VC Custom Homes, we're proud to build more than just houses; we build lasting relationships with the people who live in them. Over the years, our clients across Upstate South Carolina have trusted us to bring their vision to life with craftsmanship, communication, and care at every step.</p>
+ <p style="margin-top:1rem">But don't just take our word for it. Here's what some of our homeowners have to say about their experience.</p>
+ <p style="margin-top:1.8rem"><a class="btn" href="https://g.page/r/CWm19aPR8lX9EBM/review">Add your review</a></p>
+</div></section>
+<section class="s"><div class="wrap"><div class="rgrid">
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>We had an amazing experience building a custom home with VC. We had never built a custom home before so there was a lot that we did not know. The team at VC helped educate us in decision making and provided fantastic guidance to ensure we ended up with exactly what we wanted. Huge shout…</p><footer><b>Leyth and Jess</b><span>August 5, 2026</span><a href="https://vccustomhomes.com/2026/08/05/leyth-and-jess/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>WE LOVE OUR HOUSE. Five years ago, my wife Janet and I purchased three acres of land in Travelers Rest with the thought we might build “our forever” home and garage on the property. Against the admonitions of friends and family we made the decision to build. At the time we lived in Atlanta but…</p><footer><b>Jonathan and Janet</b><span>March 9, 2026</span><a href="https://vccustomhomes.com/2026/03/09/jonathan-and-janet/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>I found myself in a challenging position in efforts to help my in laws build something within reason and budget. Emie first and foremost answered the phone well after 5 pm which wow! In 2024, that’s not the hospitality you receive! Then, Shaun came out and presented us with everything we asked for but it…</p><footer><b>Andrea J.</b><span>September 17, 2024</span><a href="https://vccustomhomes.com/2024/09/17/andrea-j/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>Although I am in the millennial age group, I feel you need to go above and beyond to obtain a glowing review, which VC does. I am particularly impressed in the craftsmanship and the service post close. For example the Super on site (Jeff) noticed something wrong with one of the new windows after closing…</p><footer><b>Shawn L.</b><span>August 31, 2023</span><a href="https://vccustomhomes.com/2023/08/31/shawn-l/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>We love our new home built by Vicars Construction. High quality builder that is very responsive through out the entire building process. More importantly, the customer service before, during and after is exceptional. Kimberly Hill has been extremely helpful to us regarding any issue we have had. She replies promptly, is courteous, knowledgeable and goes…</p><footer><b>Patricia S.</b><span>October 11, 2022</span><a href="https://vccustomhomes.com/2022/10/11/patricia-s/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>We have been in our new home for almost a month now, I watched the construction from start to fabulous finish! Vicars Construction / VC Custom Homes are amazing. I was able to meet Ryan early on in the process, he is truly a wonderful man – family man and business owner. The finishes were…</p><footer><b>Sharon W.</b><span>July 1, 2022</span><a href="https://vccustomhomes.com/2022/07/01/sharon-w/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>We’ve been in our home since January of 2022. We were thankful to be in the first round of homes being built in the Palmetto Farms community. We found it at just the right time and were able to make changes in the upgrades (LVP flooring, single large basin sink, gas range), as we had…</p><footer><b>Jordan T.</b><span>July 1, 2022</span><a href="https://vccustomhomes.com/2022/07/01/jordan-t/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>VC Homes haven been amazing. We were first time home buyers and the quality of our home was amazing. We have friends who built a far larger more expensive home. They have had so many things to fix and repair and the home building company is still fixing things almost 2 years later. That’s if…</p><footer><b>James P.</b><span>April 21, 2022</span><a href="https://vccustomhomes.com/2022/04/21/james-p/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>This builder is amazing. His homes are beautiful and well built. One year after buying this home, I’m still satisfied. They include a lot of extras that most charge for upgrades. From Kim in the office to the painters, the entire team is awesome. Geoff that’s comes if you have any issue, is phenomenal! The…</p><footer><b>Tonya A.</b><span>April 20, 2022</span><a href="https://vccustomhomes.com/2022/04/20/tonya-a/">Read full review</a></footer></article>
+<article class="rcard"><span class="q" aria-hidden="true">&ldquo;</span><p>Top quality homes that are beautiful have upgrades and affordable.</p><footer><b>Anna P.</b><span>April 20, 2022</span><a href="https://vccustomhomes.com/2022/04/20/anna-p/">View original</a></footer></article>
+</div></div></section>
+<section class="s card"><div class="wrap cta">
+ <span class="eyebrow">Ready to start your journey?</span>
+ <h2>Your home, handled with care.</h2>
+ <p>We don't rush the process. We don't overpromise and underdeliver. And we definitely don't treat your home like another number on a list. At VC Custom Homes, our greatest success is when you walk into your finished home and say, <em>"This is exactly what I imagined."</em></p>
+ <a class="btn" href="tel:8642209840">Call 864.220.9840</a><a class="btn alt" href="#contact">Contact us</a>
+</div></section>
+<section id="contact" class="s card"><div class="wrap cols">
+ <div>
+  <h2>Contact</h2>
+  <p style="margin-top:1rem;color:var(--mute)">We're here to guide you through every step of the process, from design to final walk-through.</p>
+ </div>
+ <dl class="info">
+  <div><dt>Phone</dt><dd><a href="tel:8642209840">864.220.9840</a></dd></div>
+  <div><dt>Email</dt><dd><a href="mailto:office@vchdg.com">office@vchdg.com</a></dd></div>
+  <div><dt>Office</dt><dd>223 Siloam Rd, Ste A, Easley, SC 29642</dd></div>
+  <div><dt>Hours</dt><dd>Mon to Fri, 8am to 5pm</dd></div>
+ </dl>
+</div></section>
+</main>
+<footer><div class="wrap">
+ <span>&copy; VC Custom Homes</span>
+ <span class="soc"><a href="https://www.facebook.com/VCCustomHomes">Facebook</a><a href="https://www.instagram.com/vc_custom_homes">Instagram</a><a href="https://www.tiktok.com/@vicarsconstruction">TikTok</a><a href="https://discountgaragesc.com/">Discount Garage</a></span>
+</div></footer>
+<script>
+const prog=document.querySelector('.prog');
+const rv=[...document.querySelectorAll('.ph .wrap > *, .rcard, .cta > *, .cols > div')];
+rv.forEach(el=>{el.classList.add('rv');const i=[...el.parentElement.children].indexOf(el);el.style.setProperty('--d',(i%3)*.1+'s')});
+const done=el=>{el.classList.add('in');setTimeout(()=>el.classList.remove('rv','in'),1800)};
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver((es,o)=>es.forEach(e=>{if(e.isIntersecting){done(e.target);o.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -4% 0px'});
+  rv.forEach(el=>io.observe(el));
+}else rv.forEach(done);
+addEventListener('scroll',()=>{const m=document.documentElement.scrollHeight-innerHeight;prog.style.transform='scaleX('+(m>0?scrollY/m:0)+')'},{passive:true});
+const bg=document.querySelector('.burger'),nv=document.getElementById('nav');
+bg.addEventListener('click',()=>{const o=nv.classList.toggle('open');bg.setAttribute('aria-expanded',o)});
+nv.addEventListener('click',e=>{if(e.target.tagName==='A'){nv.classList.remove('open');bg.setAttribute('aria-expanded','false')}});
+</script>
+</body>
+</html>
